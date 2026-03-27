@@ -48,14 +48,19 @@ Plans:
   - No C extension reference leaks
 - Sphinx docs: update `documentation/` with `onGet` handler API reference and hardware-read example
 
+**Note (from research):** No changes to thread.py, asyncio.py, or cothread.py are needed. The `_exec` dispatch mechanism already routes onGet through all backends correctly. Phase 2 work is tests and documentation only.
+
 **Deliverables:**
-- Updated `src/p4p/server/thread.py`
-- Updated `src/p4p/server/asyncio.py`
-- Updated `src/p4p/server/cothread.py`
-- New/updated tests in `src/p4p/test/test_sharedpv.py` (and async variants)
-- Updated `documentation/` with `onGet` docs
+- New tests in `src/p4p/test/test_sharedpv.py`, `asynciotest.py`, `cothreadtest.py`
+- Updated `documentation/server.rst` with `onGet` docs
 
 **Requirements covered:** THR-01, THR-02, THR-03, ASIO-01, ASIO-02, CTH-01, TEST-01 through TEST-05, DOC-01, DOC-02
+
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Missing tests: test_onget_error + asyncio TestOnGet + cothread TestOnGet (Wave 1)
+- [ ] 02-02-PLAN.md — Documentation: onGet automethod + hardware-read example in server.rst (Wave 1)
 
 ---
 
@@ -64,7 +69,7 @@ Plans:
 | Phase | Goal | Key Files | Status |
 |-------|------|-----------|--------|
 | 1 | C++ + raw Python GET interception | pvxs_sharedpv.cpp, _p4p.pyx, server/raw.py | COMPLETE (2/2 plans done) |
-| 2 | Backend adapters + tests + docs | server/thread.py, asyncio.py, cothread.py, test/ | Pending |
+| 2 | Backend adapters + tests + docs | test_sharedpv.py, asynciotest.py, cothreadtest.py, server.rst | Pending (2/2 plans) |
 
 **Total requirements:** 18 v1 requirements, all mapped
 **Estimated phases:** 2 (coarse)
@@ -72,3 +77,4 @@ Plans:
 ---
 *Roadmap created: 2026-03-27*
 *Updated: 2026-03-27 — Phase 1 complete (Plans 01-01 and 01-02 done)*
+*Updated: 2026-03-27 — Phase 2 planned (Plans 02-01 and 02-02 created)*
