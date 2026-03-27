@@ -21,7 +21,7 @@ See: .planning/PROJECT.md (updated 2026-03-27)
 | Phase | Name | Status |
 |-------|------|--------|
 | 1 | C++ and Raw Python Layer | COMPLETE (2/2 plans done) |
-| 2 | Backend Adapters, Tests, and Documentation | In Progress (plan 02 done) |
+| 2 | Backend Adapters, Tests, and Documentation | In Progress (plans 01, 02 done) |
 
 ## Key Technical Context
 
@@ -53,6 +53,9 @@ See `.planning/codebase/` for full analysis (created 2026-03-27)
 - Deployed Python changes via sudo cp to dist-packages (libpvxs.so.1.5 only in installed location)
 - onGet automethod placed between rpc and onFirstConnect — logical ordering: operations before lifecycle hooks
 - Hardware-read example uses read_hardware_register() as application-defined placeholder to show the pattern
+- test_onget_error uses isolated Server/provider inside test method (not setUp's server) to avoid tearDown weak-ref complications
+- TestOnGet timeout=3.0 in asynciotest.py to allow async yield round-trip
+- cothreadtest TestOnGet auto-skips when cothread absent via bare import guard at top of file
 
 ## Performance Metrics
 
@@ -60,9 +63,10 @@ See `.planning/codebase/` for full analysis (created 2026-03-27)
 |-------|------|----------|-------|-------|
 | 01 | 01 | 8min | 2 | 5 |
 | 01 | 02 | 15min | 2 | 1 |
+| 02 | 01 | 2min | 3 | 3 |
 | 02 | 02 | 5min | 1 | 1 |
 
 ## Last session
 
-**Stopped at:** Completed 02-02-PLAN.md (server.rst onGet automethod + hardware-read example)
-**Timestamp:** 2026-03-27T20:25:00Z
+**Stopped at:** Completed 02-01-PLAN.md (test_onget_error + asyncio/cothread TestOnGet, 29 tests green) and 02-02-PLAN.md (server.rst onGet automethod + hardware-read example)
+**Timestamp:** 2026-03-27T20:25:13Z

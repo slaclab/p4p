@@ -18,26 +18,26 @@
 
 ### Thread Backend
 
-- [ ] **THR-01**: `server/thread.py` dispatches `onGet` through a `WorkQueue` (not called directly on pvxs network thread)
-- [ ] **THR-02**: `onGet` handler can call `op.done(value)` to complete the GET with a value
-- [ ] **THR-03**: `onGet` handler can call `op.done(error='msg')` to fail the GET
+- [x] **THR-01**: `server/thread.py` dispatches `onGet` through a `WorkQueue` (not called directly on pvxs network thread)
+- [x] **THR-02**: `onGet` handler can call `op.done(value)` to complete the GET with a value
+- [x] **THR-03**: `onGet` handler can call `op.done(error='msg')` to fail the GET
 
 ### Asyncio Backend
 
-- [ ] **ASIO-01**: `server/asyncio.py` dispatches `onGet` into the asyncio event loop via `loop.call_soon_threadsafe()`
-- [ ] **ASIO-02**: `async def onGet(self, op)` coroutines are supported
+- [x] **ASIO-01**: `server/asyncio.py` dispatches `onGet` into the asyncio event loop via `loop.call_soon_threadsafe()`
+- [x] **ASIO-02**: `async def onGet(self, op)` coroutines are supported
 
 ### Cothread Backend
 
-- [ ] **CTH-01**: `server/cothread.py` dispatches `onGet` via cothread callback mechanism
+- [x] **CTH-01**: `server/cothread.py` dispatches `onGet` via cothread callback mechanism
 
 ### Tests
 
-- [ ] **TEST-01**: Integration test: client `get()` triggers `onGet` in thread backend
-- [ ] **TEST-02**: Integration test: `onGet` calling `op.done(value)` returns the correct value to client
-- [ ] **TEST-03**: Integration test: `onGet` calling `op.done(error=...)` delivers error to client
-- [ ] **TEST-04**: Backward compat test: Handler without `onGet` continues to work (default PVXS behavior)
-- [ ] **TEST-05**: Reference leak test via `RefTestCase` passes (no C extension object leaks)
+- [x] **TEST-01**: Integration test: client `get()` triggers `onGet` in thread backend
+- [x] **TEST-02**: Integration test: `onGet` calling `op.done(value)` returns the correct value to client
+- [x] **TEST-03**: Integration test: `onGet` calling `op.done(error=...)` delivers error to client
+- [x] **TEST-04**: Backward compat test: Handler without `onGet` continues to work (default PVXS behavior)
+- [x] **TEST-05**: Reference leak test via `RefTestCase` passes (no C extension object leaks)
 
 ### Documentation
 
@@ -62,17 +62,17 @@
 | CPP-03 | Phase 1 | Done (01-01) |
 | RAW-01 | Phase 1 | Done (01-01) |
 | RAW-02 | Phase 1 | Done (01-01) |
-| THR-01 | Phase 2 | Pending |
-| THR-02 | Phase 2 | Pending |
-| THR-03 | Phase 2 | Pending |
-| ASIO-01 | Phase 2 | Pending |
-| ASIO-02 | Phase 2 | Pending |
-| CTH-01 | Phase 2 | Pending |
-| TEST-01 | Phase 2 | Pending |
-| TEST-02 | Phase 2 | Pending |
-| TEST-03 | Phase 2 | Pending |
-| TEST-04 | Phase 2 | Pending |
-| TEST-05 | Phase 2 | Pending |
+| THR-01 | Phase 2 | Done (02-01) |
+| THR-02 | Phase 2 | Done (02-01) |
+| THR-03 | Phase 2 | Done (02-01) |
+| ASIO-01 | Phase 2 | Done (02-01) |
+| ASIO-02 | Phase 2 | Done (02-01) |
+| CTH-01 | Phase 2 | Done (02-01) |
+| TEST-01 | Phase 2 | Done (02-01) |
+| TEST-02 | Phase 2 | Done (02-01) |
+| TEST-03 | Phase 2 | Done (02-01) |
+| TEST-04 | Phase 2 | Done (02-01) |
+| TEST-05 | Phase 2 | Done (02-01) |
 | DOC-01 | Phase 2 | Done (02-02) |
 | DOC-02 | Phase 2 | Done (02-02) |
 
