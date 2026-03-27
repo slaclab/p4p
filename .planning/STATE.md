@@ -1,27 +1,27 @@
 # Project State
 
 **Last updated:** 2026-03-27
-**Status:** Phase 2, Plan 2 complete — DOC-01/DOC-02 implemented (server.rst onGet automethod and hardware-read example)
+**Status:** MILESTONE COMPLETE — all 18 v1 requirements verified, 29 tests green
 
 ## Project Reference
 
 See: .planning/PROJECT.md (updated 2026-03-27)
 
 **Core value:** A Python Handler subclass can define `onGet(self, op)` and have it called when a client executes `cxt.get()`, enabling demand-driven hardware reads.
-**Current focus:** Phase 2 — Backend adapters, tests, and documentation
+**Current focus:** Milestone v1 complete — onGet handler fully implemented
 
 ## Current Phase
 
-**Phase 1** — COMPLETE (2 plans done)
-- Plan 1 (CPP-01/CPP-02/CPP-03): DONE — GetInterceptSource, Cython wiring, _WrapHandler onGet
-- Plan 2 (RAW-01/RAW-02): DONE — Handler.onGet docstring, SharedPV.get decorator, 18 tests green
+**Phase 2** — COMPLETE (2 plans done)
+- Plan 1 (THR-01/02/03, ASIO-01/02, CTH-01, TEST-01-05): DONE — test_onget_error, asyncio TestOnGet, cothread TestOnGet, 29 tests green
+- Plan 2 (DOC-01/DOC-02): DONE — server.rst onGet automethod + hardware-read example
 
 ## Phase Status
 
 | Phase | Name | Status |
 |-------|------|--------|
 | 1 | C++ and Raw Python Layer | COMPLETE (2/2 plans done) |
-| 2 | Backend Adapters, Tests, and Documentation | In Progress (plans 01, 02 done) |
+| 2 | Backend Adapters, Tests, and Documentation | COMPLETE (2/2 plans done) |
 
 ## Key Technical Context
 
@@ -68,5 +68,5 @@ See `.planning/codebase/` for full analysis (created 2026-03-27)
 
 ## Last session
 
-**Stopped at:** Completed 02-01-PLAN.md (test_onget_error + asyncio/cothread TestOnGet, 29 tests green) and 02-02-PLAN.md (server.rst onGet automethod + hardware-read example)
-**Timestamp:** 2026-03-27T20:25:13Z
+**Stopped at:** Phase 2 complete — all 18 v1 requirements done, milestone v1 achieved
+**Timestamp:** 2026-03-27T20:40:00Z

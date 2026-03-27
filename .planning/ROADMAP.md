@@ -59,7 +59,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Missing tests: test_onget_error + asyncio TestOnGet + cothread TestOnGet (Wave 1)
+- [x] 02-01-PLAN.md — Missing tests: test_onget_error + asyncio TestOnGet + cothread TestOnGet (Wave 1) — DONE 2026-03-27
 - [x] 02-02-PLAN.md — Documentation: onGet automethod + hardware-read example in server.rst (Wave 1) — DONE 2026-03-27
 
 ---
@@ -69,7 +69,7 @@ Plans:
 | Phase | Goal | Key Files | Status |
 |-------|------|-----------|--------|
 | 1 | C++ + raw Python GET interception | pvxs_sharedpv.cpp, _p4p.pyx, server/raw.py | COMPLETE (2/2 plans done) |
-| 2 | Backend adapters + tests + docs | test_sharedpv.py, asynciotest.py, cothreadtest.py, server.rst | Pending (2/2 plans) |
+| 2 | Backend adapters + tests + docs | test_sharedpv.py, asynciotest.py, cothreadtest.py, server.rst | COMPLETE (2/2 plans done) |
 
 **Total requirements:** 18 v1 requirements, all mapped
 **Estimated phases:** 2 (coarse)
@@ -78,4 +78,4 @@ Plans:
 *Roadmap created: 2026-03-27*
 *Updated: 2026-03-27 — Phase 1 complete (Plans 01-01 and 01-02 done)*
 *Updated: 2026-03-27 — Phase 2 planned (Plans 02-01 and 02-02 created)*
-*Updated: 2026-03-27 — 02-02 complete (server.rst onGet automethod + hardware-read example)*
+*Updated: 2026-03-27 — Phase 2 complete (2/2 plans done, 18/18 requirements verified)*
