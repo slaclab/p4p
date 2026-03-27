@@ -1,26 +1,26 @@
 # Project State
 
 **Last updated:** 2026-03-27
-**Status:** Phase 1, Plan 1 complete — CPP-01/CPP-02/CPP-03 implemented
+**Status:** Phase 1, Plan 2 complete — RAW-01/RAW-02 implemented; Phase 1 complete
 
 ## Project Reference
 
 See: .planning/PROJECT.md (updated 2026-03-27)
 
 **Core value:** A Python Handler subclass can define `onGet(self, op)` and have it called when a client executes `cxt.get()`, enabling demand-driven hardware reads.
-**Current focus:** Phase 1 — C++ and raw Python layer (Plan 1 done, Plan 2 pending)
+**Current focus:** Phase 2 — Backend adapters, tests, and documentation
 
 ## Current Phase
 
-**Phase 1** — Plan 1 complete
+**Phase 1** — COMPLETE (2 plans done)
 - Plan 1 (CPP-01/CPP-02/CPP-03): DONE — GetInterceptSource, Cython wiring, _WrapHandler onGet
-- Plan 2 (RAW-01/RAW-02 + backends + docs): TODO
+- Plan 2 (RAW-01/RAW-02): DONE — Handler.onGet docstring, SharedPV.get decorator, 18 tests green
 
 ## Phase Status
 
 | Phase | Name | Status |
 |-------|------|--------|
-| 1 | C++ and Raw Python Layer | In Progress (1/N plans done) |
+| 1 | C++ and Raw Python Layer | COMPLETE (2/2 plans done) |
 | 2 | Backend Adapters, Tests, and Documentation | Pending |
 
 ## Key Technical Context
@@ -48,14 +48,18 @@ See `.planning/codebase/` for full analysis (created 2026-03-27)
 - _WrapHandler.onGet added as instance method only when real handler has onGet attribute
 - PVs with onGet NOT added to StaticSource — GetInterceptSource handles all channel operations
 - onFirstConnect/onLastDisconnect do NOT fire for PVs using GetInterceptSource (Phase 1 known limitation)
+- Class-level _WrapHandler.onGet must NOT be added — makes hasattr(_whandler, 'onGet') always True, routing every PV through GetInterceptSource
+- SharedPV.get decorator sets _handler.onGet (the real user handler), not _whandler.onGet
+- Deployed Python changes via sudo cp to dist-packages (libpvxs.so.1.5 only in installed location)
 
 ## Performance Metrics
 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 01 | 01 | 8min | 2 | 5 |
+| 01 | 02 | 15min | 2 | 1 |
 
 ## Last session
 
-**Stopped at:** Completed 01-01-PLAN.md (GetInterceptSource C++ + Cython wiring)
-**Timestamp:** 2026-03-27T19:50:12Z
+**Stopped at:** Completed 01-02-PLAN.md (SharedPV.get decorator + full test suite green)
+**Timestamp:** 2026-03-27T20:15:00Z
