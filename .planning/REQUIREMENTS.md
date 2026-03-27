@@ -41,8 +41,8 @@
 
 ### Documentation
 
-- [ ] **DOC-01**: `documentation/server.rst` (or equivalent) documents `onGet` in Handler API reference
-- [ ] **DOC-02**: Example showing hardware-read pattern in `onGet`
+- [x] **DOC-01**: `documentation/server.rst` (or equivalent) documents `onGet` in Handler API reference
+- [x] **DOC-02**: Example showing hardware-read pattern in `onGet`
 
 ## Out of Scope
 
@@ -73,8 +73,8 @@
 | TEST-03 | Phase 2 | Pending |
 | TEST-04 | Phase 2 | Pending |
 | TEST-05 | Phase 2 | Pending |
-| DOC-01 | Phase 2 | Pending |
-| DOC-02 | Phase 2 | Pending |
+| DOC-01 | Phase 2 | Done (02-02) |
+| DOC-02 | Phase 2 | Done (02-02) |
 
 **Coverage:**
 - v1 requirements: 18 total

@@ -60,7 +60,7 @@ Plans:
 
 Plans:
 - [ ] 02-01-PLAN.md — Missing tests: test_onget_error + asyncio TestOnGet + cothread TestOnGet (Wave 1)
-- [ ] 02-02-PLAN.md — Documentation: onGet automethod + hardware-read example in server.rst (Wave 1)
+- [x] 02-02-PLAN.md — Documentation: onGet automethod + hardware-read example in server.rst (Wave 1) — DONE 2026-03-27
 
 ---
 
@@ -78,3 +78,4 @@ Plans:
 *Roadmap created: 2026-03-27*
 *Updated: 2026-03-27 — Phase 1 complete (Plans 01-01 and 01-02 done)*
 *Updated: 2026-03-27 — Phase 2 planned (Plans 02-01 and 02-02 created)*
+*Updated: 2026-03-27 — 02-02 complete (server.rst onGet automethod + hardware-read example)*
