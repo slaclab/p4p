@@ -27,7 +27,7 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — C++ GetInterceptSource + Cython wiring + failing tests (Wave 1)
+- [x] 01-01-PLAN.md — C++ GetInterceptSource + Cython wiring + failing tests (Wave 1) — DONE 2026-03-27
 - [ ] 01-02-PLAN.md — Python raw layer: Handler.onGet + _WrapHandler.onGet dispatch (Wave 2)
 
 ---
@@ -63,7 +63,7 @@ Plans:
 
 | Phase | Goal | Key Files | Status |
 |-------|------|-----------|--------|
-| 1 | C++ + raw Python GET interception | pvxs_sharedpv.cpp, _p4p.pyx, server/raw.py | Planned |
+| 1 | C++ + raw Python GET interception | pvxs_sharedpv.cpp, _p4p.pyx, server/raw.py | In Progress (1/2 plans done) |
 | 2 | Backend adapters + tests + docs | server/thread.py, asyncio.py, cothread.py, test/ | Pending |
 
 **Total requirements:** 18 v1 requirements, all mapped
